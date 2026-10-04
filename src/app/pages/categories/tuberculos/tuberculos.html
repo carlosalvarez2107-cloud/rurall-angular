@@ -1,0 +1,53 @@
+<main class="tuberculos-page">
+
+  <section class="tuberculos-header">
+
+    <div class="tuberculos-header-contenido">
+
+      <h1>Tubérculos, Raíces Y Plátanos</h1>
+
+      <p>
+        "Cultivados en el silencio de los Andes y los valles, la yuca, el plátano y la papa guardan la memoria del campesino y alimentan el alma de toda una nación"
+      </p>
+
+      <p>Oferta de productores y fincas disponibles:</p>
+
+    </div>
+
+    <div class="tuberculos-header-imagen">
+      <img
+        src="/tuberculos.jpg"
+        alt="Tubérculos colombianos"
+      >
+    </div>
+
+  </section>
+
+  <section class="oferta-fincas">
+
+    @for (finca of fincas; track finca.nombre) {
+      <article class="tarjeta-finca">
+
+        <img
+          [src]="finca.imagen"
+          [alt]="'Imagen de ' + finca.nombre"
+        >
+
+        <div class="informacion-finca">
+          <h2>{{ finca.nombre }}</h2>
+
+          <p>
+            <strong>Ubicación:</strong>
+            {{ finca.ubicacion }}
+          </p>
+
+          <p>
+            <strong>Puntuación:</strong>
+            ⭐ {{ finca.puntuacion }}
+          </p>
+        </div>
+
+      </article>
+    }
+
+  </section>

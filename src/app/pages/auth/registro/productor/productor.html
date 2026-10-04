@@ -1,0 +1,108 @@
+<header class="auth-encabezado">
+  <h2>Cuéntanos sobre ti</h2>
+  <p>Información básica de tu actividad productiva.</p>
+</header>
+
+<form [formGroup]="formularioProductor" (ngSubmit)="finalizar()">
+
+  <div class="campo">
+    <label for="tipoProductor">Tipo de productor</label>
+    <input
+      type="text"
+      id="tipoProductor"
+      formControlName="tipoProductor"
+      placeholder="Ej: Agrícola, piscícola, pecuario...">
+
+    @if (
+      formularioProductor.get('tipoProductor')?.invalid &&
+      formularioProductor.get('tipoProductor')?.touched
+    ) {
+      <small class="mensaje-error">Describe tu tipo de producción.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="identificacion">Cédula</label>
+    <input
+      type="text"
+      id="identificacion"
+      formControlName="identificacion"
+      placeholder="Ej: 1234567890"
+      inputmode="numeric">
+
+    @if (
+      formularioProductor.get('identificacion')?.invalid &&
+      formularioProductor.get('identificacion')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa una cédula válida (solo números).</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="departamento">Departamento</label>
+    <select
+      id="departamento"
+      formControlName="departamento">
+
+      <option value="">Selecciona un departamento</option>
+
+      @for (depto of departamentos; track depto.codigo) {
+        <option [value]="depto.nombre">{{ depto.nombre }}</option>
+      }
+
+    </select>
+
+    @if (
+      formularioProductor.get('departamento')?.invalid &&
+      formularioProductor.get('departamento')?.touched
+    ) {
+      <small class="mensaje-error">Selecciona tu departamento.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="municipio">Municipio</label>
+    <input
+      type="text"
+      id="municipio"
+      formControlName="municipio"
+      placeholder="Ej: Andes">
+
+    @if (
+      formularioProductor.get('municipio')?.invalid &&
+      formularioProductor.get('municipio')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa tu municipio.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="vereda">Vereda</label>
+    <input
+      type="text"
+      id="vereda"
+      formControlName="vereda"
+      placeholder="Ej: Vereda La Esperanza">
+
+    @if (
+      formularioProductor.get('vereda')?.invalid &&
+      formularioProductor.get('vereda')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa tu vereda.</small>
+    }
+  </div>
+
+  <button
+    type="submit"
+    class="btn-primario"
+    [disabled]="formularioProductor.invalid">
+    Finalizar registro
+  </button>
+
+</form>
+
+<footer class="auth-links">
+  <p>
+    <a routerLink="/auth/registro/perfil">← Volver</a>
+  </p>
+</footer>

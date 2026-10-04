@@ -1,0 +1,112 @@
+/* ==============================
+   ESTILOS COMPARTIDOS DEL WIZARD
+   ============================== */
+
+/* Encabezado del paso */
+.auth-encabezado {
+  margin-bottom: 30px;
+}
+
+.auth-encabezado h2 {
+  margin-bottom: 10px;
+  color: #285943;
+  font-size: 1.9rem;
+}
+
+.auth-encabezado p {
+  color: #5f6f65;
+  font-size: 1rem;
+}
+
+/* Campos de formulario */
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.campo label {
+  margin-bottom: 8px;
+  color: #285943;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d4ddd7;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #285943;
+  box-shadow: 0 0 0 3px rgba(40, 89, 67, 0.12);
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #285943;
+  box-shadow: 0 0 0 3px rgba(40, 89, 67, 0.12);
+}
+
+.mensaje-error {
+  margin-top: 6px;
+  color: #b42318;
+  font-size: 0.85rem;
+}
+
+/* Botón principal */
+.btn-primario {
+  width: 100%;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #285943;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-primario:hover:not(:disabled) {
+  background: #1f4735;
+  transform: translateY(-1px);
+}
+
+.btn-primario:disabled {
+  background: #a4b5ab;
+  cursor: not-allowed;
+}
+
+/* Links del pie */
+.auth-links {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.auth-links p {
+  color: #5f6f65;
+  font-size: 0.95rem;
+}
+
+.auth-links a {
+  color: #285943;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}

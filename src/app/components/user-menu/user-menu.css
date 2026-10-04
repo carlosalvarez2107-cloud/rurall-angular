@@ -1,0 +1,139 @@
+/* ==============================
+   MENÚ DE USUARIO
+   ============================== */
+
+.user-menu {
+  position: relative;
+}
+
+/* Botón que abre el menú (avatar) */
+.user-menu-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 12px 6px 6px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+
+  color: #ffffff;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.user-menu-trigger:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.user-menu-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  background: #4caf50;
+  color: #ffffff;
+
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.user-menu-flecha {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+/* Dropdown */
+.user-menu-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  min-width: 240px;
+
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.user-menu-header {
+  padding: 16px 18px;
+  background: #f7f9f7;
+  border-bottom: 1px solid #e5ebe6;
+}
+
+.user-menu-nombre {
+  margin: 0 0 4px;
+  color: #285943;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.user-menu-email {
+  margin: 0;
+  color: #6b7a70;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.user-menu-items {
+  padding: 8px 0;
+}
+
+.user-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 18px;
+
+  border: none;
+  background: transparent;
+
+  color: #2f3d33;
+  font-family: inherit;
+  font-size: 0.92rem;
+  text-decoration: none;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background-color 0.15s ease;
+}
+
+.user-menu-item:hover {
+  background: #eef3ee;
+}
+
+.user-menu-icono {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Separador y cerrar sesión */
+.user-menu-separador {
+  height: 1px;
+  background: #e5ebe6;
+}
+
+.user-menu-item-cerrar {
+  color: #b42318;
+}
+
+.user-menu-item-cerrar:hover {
+  background: #fef3f2;
+}

@@ -1,0 +1,36 @@
+<main class="auth-page">
+
+  <aside class="auth-branding">
+    <div class="auth-branding-contenido">
+      <h1>RURALL</h1>
+      <p>
+        Crea tu cuenta y comienza a hacer parte
+        del ecosistema rural colombiano.
+      </p>
+
+      <!-- Indicador de pasos -->
+ <ol class="wizard-pasos">
+  <li class="wizard-paso" [class.activo]="pasoActual >= 1">
+    <span class="wizard-numero">1</span>
+    <span class="wizard-etiqueta">Cuenta</span>
+  </li>
+  <li class="wizard-paso" [class.activo]="pasoActual >= 2">
+    <span class="wizard-numero">2</span>
+    <span class="wizard-etiqueta">Perfil</span>
+  </li>
+  <li class="wizard-paso" [class.activo]="pasoActual >= 3">
+    <span class="wizard-numero">3</span>
+    <span class="wizard-etiqueta">Detalles</span>
+  </li>
+</ol>
+
+    </div>
+  </aside>
+
+  <section class="auth-formulario-wrapper">
+    <div class="auth-formulario">
+      <router-outlet />
+    </div>
+  </section>
+
+</main>

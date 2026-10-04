@@ -1,0 +1,34 @@
+<header class="auth-encabezado">
+  <h2>¿Cómo participarás?</h2>
+  <p>Elige tu rol dentro del ecosistema RURALL.</p>
+</header>
+
+<div class="opciones-rol">
+
+  @for (opcion of opciones; track opcion.rol) {
+
+    <button
+      type="button"
+      class="opcion-card"
+      (click)="seleccionarRol(opcion.rol)">
+
+      <span class="opcion-emoji">{{ opcion.emoji }}</span>
+
+      <div class="opcion-texto">
+        <h3>{{ opcion.titulo }}</h3>
+        <p>{{ opcion.descripcion }}</p>
+      </div>
+
+      <span class="opcion-flecha">→</span>
+
+    </button>
+
+  }
+
+</div>
+
+<footer class="auth-links">
+  <p>
+    <a routerLink="/auth/registro">← Volver</a>
+  </p>
+</footer>

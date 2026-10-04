@@ -1,0 +1,79 @@
+<header class="auth-encabezado">
+  <h2>Cuéntanos sobre ti</h2>
+  <p>Datos para las entregas de tus pedidos.</p>
+</header>
+
+<form [formGroup]="formularioComprador" (ngSubmit)="finalizar()">
+
+  <div class="campo">
+    <label for="ciudad">Ciudad / Municipio</label>
+    <input
+      type="text"
+      id="ciudad"
+      formControlName="ciudad"
+      placeholder="Ej: Medellín"
+      autocomplete="address-level2">
+
+    @if (
+      formularioComprador.get('ciudad')?.invalid &&
+      formularioComprador.get('ciudad')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa tu ciudad o municipio.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="direccionEntrega">Dirección de entrega</label>
+    <input
+      type="text"
+      id="direccionEntrega"
+      formControlName="direccionEntrega"
+      placeholder="Ej: Cra 45 #12-34, Apto 201"
+      autocomplete="street-address">
+
+    @if (
+      formularioComprador.get('direccionEntrega')?.invalid &&
+      formularioComprador.get('direccionEntrega')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa una dirección válida.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="telefonoRespaldo1">
+      Teléfono de respaldo 1 <span class="opcional">(opcional)</span>
+    </label>
+    <input
+      type="tel"
+      id="telefonoRespaldo1"
+      formControlName="telefonoRespaldo1"
+      placeholder="Ej: 3001234567"
+      autocomplete="tel">
+  </div>
+
+  <div class="campo">
+    <label for="telefonoRespaldo2">
+      Teléfono de respaldo 2 <span class="opcional">(opcional)</span>
+    </label>
+    <input
+      type="tel"
+      id="telefonoRespaldo2"
+      formControlName="telefonoRespaldo2"
+      placeholder="Ej: 3001234567"
+      autocomplete="tel">
+  </div>
+
+  <button
+    type="submit"
+    class="btn-primario"
+    [disabled]="formularioComprador.invalid">
+    Finalizar registro
+  </button>
+
+</form>
+
+<footer class="auth-links">
+  <p>
+    <a routerLink="/auth/registro/perfil">← Volver</a>
+  </p>
+</footer>

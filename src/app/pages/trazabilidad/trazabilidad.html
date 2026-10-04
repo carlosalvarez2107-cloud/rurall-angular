@@ -1,0 +1,376 @@
+<main class="trazabilidad-page">
+
+  <!-- Encabezado -->
+  <section class="trazabilidad-header">
+
+    <div class="container">
+
+      <div class="trazabilidad-header-contenido">
+
+        <h1>Trazabilidad</h1>
+
+        <p>
+          Conoce el recorrido de los productos rurales desde su origen
+          hasta su destino.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Guía rápida -->
+  <section class="guia-trazabilidad">
+
+    <div class="container">
+
+      <div class="guia-contenido">
+
+        <h2>¿Cómo funciona la trazabilidad?</h2>
+
+        <p>
+          RURALL permite registrar la información de cada lote de producción,
+          generar un código QR y asociarlo al producto para facilitar su
+          seguimiento.
+        </p>
+
+
+        <div class="guia-pasos">
+
+          <article class="guia-paso">
+
+            <span class="guia-numero">1</span>
+
+            <h3>Registra tu lote</h3>
+
+            <p>
+              Ingresa la información correspondiente al producto y su
+              proceso de producción.
+            </p>
+
+          </article>
+
+
+          <article class="guia-paso">
+
+            <span class="guia-numero">2</span>
+
+            <h3>Genera el QR</h3>
+
+            <p>
+              RURALL genera un código QR asociado a la información
+              registrada del lote.
+            </p>
+
+          </article>
+
+
+          <article class="guia-paso">
+
+            <span class="guia-numero">3</span>
+
+            <h3>Identifica el producto</h3>
+
+            <p>
+              El código QR puede ser asociado al producto para permitir
+              consultar posteriormente su trazabilidad.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Generador de QR -->
+  <section class="generador-qr">
+
+    <div class="container">
+
+      <div class="generador-contenido">
+
+        <div class="generador-introduccion">
+
+          <h2>Generar código QR</h2>
+
+          <p>
+            Selecciona la categoría del producto e ingresa la información
+            correspondiente al lote.
+          </p>
+
+        </div>
+
+
+        <!-- Formulario -->
+        <form
+  class="formulario-trazabilidad"
+  [formGroup]="formularioTrazabilidad">
+
+  <!-- Categoría -->
+
+  <div class="campo">
+
+    <label for="categoria">
+      Categoría del producto
+    </label>
+
+    <select
+      id="categoria"
+      formControlName="categoria">
+
+      <option value="">
+        Selecciona una categoría
+      </option>
+
+      <option value="verduras">
+        Verduras y hortalizas
+      </option>
+
+      <option value="frutas">
+        Frutas
+      </option>
+
+      <option value="tuberculos">
+        Tubérculos, raíces y plátanos
+      </option>
+
+      <option value="granos">
+        Granos, cereales y leguminosas
+      </option>
+
+      <option value="cafe">
+        Café, cacao y cultivos de transformación
+      </option>
+
+      <option value="aromaticas">
+        Aromáticas, medicinales y condimentos
+      </option>
+
+      <option value="carnes">
+        Carnes
+      </option>
+
+      <option value="pescados">
+        Pescados y productos de pesca
+      </option>
+
+      <option value="lacteos">
+        Lácteos y huevos
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- Producto -->
+
+ <div class="campo">
+
+  <label for="producto">
+    Producto
+  </label>
+
+  <input
+    type="text"
+    id="producto"
+    formControlName="producto"
+    placeholder="Ejemplo: Tilapia roja">
+
+  @if (
+    formularioTrazabilidad.get('producto')?.invalid &&
+    formularioTrazabilidad.get('producto')?.touched
+  ) {
+    <small class="mensaje-error">
+      Ingresa el nombre del producto.
+    </small>
+  }
+
+</div>
+
+  <!-- Información general del lote -->
+
+  <div class="bloque-formulario">
+
+    <h3>Información del lote</h3>
+
+    <div class="campo">
+
+      <label for="lote">
+        Nombre o código del lote
+      </label>
+
+      <input
+        type="text"
+        id="lote"
+        formControlName="lote"
+        placeholder="Ejemplo: Lote-001">
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="fechaProduccion">
+        Fecha de producción
+      </label>
+
+      <input
+        type="date"
+        id="fechaProduccion"
+        formControlName="fechaProduccion">
+
+    </div>
+
+     <!-- Cantidad -->
+
+    <div class="campo">
+
+      <label for="cantidad">
+        Cantidad
+      </label>
+
+      <input
+        type="number"
+        id="cantidad"
+        formControlName="cantidad"
+        placeholder="Ejemplo: 500">
+
+        @if (
+  formularioTrazabilidad.get('cantidad')?.invalid &&
+  formularioTrazabilidad.get('cantidad')?.touched
+) {
+  <small class="mensaje-error">
+    Ingresa una cantidad mayor que cero.
+  </small>
+}
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="unidad">
+        Unidad
+      </label>
+
+      <input
+        type="text"
+        id="unidad"
+        formControlName="unidad"
+        placeholder="Ejemplo: kg">
+
+    </div>
+
+  </div>
+
+
+  <!-- Campos específicos -->
+
+  @if (camposDinamicos.length > 0) {
+
+    <div class="campos-dinamicos">
+
+      <h3>Información específica del producto</h3>
+
+      @for (campo of camposDinamicos; track campo.nombre) {
+
+        <div class="campo">
+  <label [for]="campo.nombre">{{ campo.etiqueta }}</label>
+  <input
+    [type]="campo.tipo"
+    [id]="campo.nombre"
+    [formControlName]="campo.nombre"
+    [placeholder]="campo.placeholder || ''">
+
+  @if (
+    formularioTrazabilidad.get(campo.nombre)?.invalid &&
+    formularioTrazabilidad.get(campo.nombre)?.touched
+  ) {
+    <small class="mensaje-error">Este campo es obligatorio.</small>
+  }
+</div>
+
+      }
+
+    </div>
+
+  }
+
+
+  @if (camposDinamicos.length === 0) {
+
+    <div class="campos-dinamicos">
+
+      <p>
+        Selecciona una categoría para mostrar los datos
+        correspondientes al lote.
+      </p>
+
+    </div>
+
+  }
+
+
+  <!-- Botón -->
+
+  <button type="button" class="btn-generar-qr"
+  
+   (click)="generarQR()">
+
+  Generar código QR
+
+</button>
+
+</form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Geolocalización y seguimiento -->
+  <section class="seguimiento-trazabilidad">
+
+    <div class="container">
+
+      <div class="seguimiento-contenido">
+
+        <h2>Seguimiento y ubicación</h2>
+
+        <p>
+          Consulta posteriormente la ubicación y el estado del producto
+          durante su recorrido.
+        </p>
+
+
+        <div class="mapa-contenedor">
+
+          <div class="mapa-placeholder">
+
+            <span>Mapa de seguimiento</span>
+
+            <p>
+              Aquí se integrará posteriormente el mapa interactivo.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>

@@ -1,0 +1,121 @@
+<footer class="rurall-footer">
+
+  <div class="footer-contenido">
+
+    <!-- INFORMACIÓN PRINCIPAL -->
+    <div class="footer-columna footer-identidad">
+
+      <h2>RURALL</h2>
+
+      <p>
+        Tecnología para conectar el campo con el consumidor,
+        fortaleciendo la trazabilidad y el desarrollo del
+        sector rural colombiano.
+      </p>
+
+    </div>
+
+
+    <!-- PLATAFORMA -->
+    <div class="footer-columna">
+
+      <h3>Plataforma</h3>
+
+      <ul>
+        <li>
+          @if (authService.sesion()) {
+            <a routerLink="/panel">Mi panel</a>
+          } @else {
+            <a routerLink="/auth/registro">Únete a RURALL</a>
+          }
+        </li>
+
+        <li><span>Productor Rural</span></li>
+        <li><span>Logística</span></li>
+        <li><span>Comprador</span></li>
+        <li><a routerLink="/trazabilidad">Trazabilidad</a></li>
+      </ul>
+
+    </div>
+
+
+    <!-- RECURSOS -->
+    <div class="footer-columna">
+
+      <h3>Recursos</h3>
+
+      <ul>
+        <li><span>Actualidad</span></li>
+        <li><span>Conoce RURALL</span></li>
+        <li><span>Centro de ayuda</span></li>
+      </ul>
+
+    </div>
+
+
+    <!-- CONTACTO Y REDES -->
+    <div class="footer-columna footer-contacto">
+
+      <h3>Contacto</h3>
+
+      <p>Colombia</p>
+
+      <p>
+        <a href="mailto:rurallcolombia@gmail.com">
+          rurallcolombia@gmail.com
+        </a>
+      </p>
+
+      <div class="footer-redes">
+
+        <span class="red-icono facebook" title="Facebook (próximamente)">
+          <i class="fab fa-facebook-f"></i>
+        </span>
+
+        <span class="red-icono instagram" title="Instagram (próximamente)">
+          <i class="fab fa-instagram"></i>
+        </span>
+
+        <span class="red-icono x-twitter" title="X (próximamente)">
+          <i class="fab fa-x-twitter"></i>
+        </span>
+
+        <span class="red-icono tiktok" title="TikTok (próximamente)">
+          <i class="fab fa-tiktok"></i>
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- PARTE INFERIOR -->
+  <div class="footer-inferior">
+
+    <p class="footer-derechos">
+      &copy; 2026 <strong>RURALL</strong>.
+      Todos los derechos reservados.
+    </p>
+
+    <div class="footer-legal">
+
+      <a routerLink="/legal" fragment="terminos">
+        Términos y condiciones
+      </a>
+
+      <a routerLink="/legal" fragment="privacidad">
+        Política de privacidad
+      </a>
+
+    </div>
+
+    <p class="footer-lema">
+      Impulsando el desarrollo tecnológico del sector
+      agropecuario colombiano.
+    </p>
+
+  </div>
+
+</footer>

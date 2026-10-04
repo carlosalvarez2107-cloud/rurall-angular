@@ -1,0 +1,593 @@
+/* =========================================================
+   HEADER PRINCIPAL - RURALL
+   ========================================================= */
+
+header {
+  position: relative;
+
+  background-color: #1a4220;
+
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(16, 43, 20, 0.95) 25%,
+      rgba(26, 66, 32, 0.6) 60%,
+      transparent 100%
+    ),
+    url('/fondo.png');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  color: white;
+
+  padding: 3.5rem 2rem 4.5rem;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================================
+   CONTENEDOR DEL HEADER
+   ========================================================= */
+
+.header-container {
+  position: relative;
+
+  max-width: 1100px;
+  min-height: 150px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   BLOQUE DE TEXTO
+   ========================================================= */
+
+.header-texto {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  text-align: left;
+}
+
+.header-texto p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.4;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL RURALL
+   ========================================================= */
+
+.logo {
+  display: inline-block;
+
+  margin-bottom: 0.5rem;
+
+  color: #ffffff;
+
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    text-shadow 0.3s ease,
+    color 0.3s ease;
+}
+
+.logo:hover {
+  color: #e8f5e9;
+
+  transform: translateY(-4px) scale(1.04);
+
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN DEL HEADER
+   ========================================================= */
+
+.navegacion-header {
+  position: absolute;
+
+  right: 145px;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+}
+
+
+/* Enlaces de navegación */
+
+.navegacion-header a {
+  position: relative;
+
+  display: inline-block;
+
+  cursor: pointer;
+
+  padding: 0 15px;
+
+  color: #e8f5e9;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+
+/* Separadores verticales */
+
+.navegacion-header a:not(:last-child)::after {
+  content: "|";
+
+  position: absolute;
+
+  right: -1px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: rgba(255, 255, 255, 0.55);
+
+  pointer-events: none;
+
+  transition: color 0.3s ease;
+}
+
+
+/* Interacción visual */
+
+.navegacion-header a:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 8px rgba(165, 214, 167, 0.8);
+}
+
+
+/* El separador también reacciona al pasar el cursor */
+
+.navegacion-header a:hover::after {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   MENÚ DE CATEGORÍAS
+   ========================================================= */
+
+.categoria-navegacion {
+  position: relative;
+}
+
+.menu-categorias {
+  position: absolute;
+
+  top: 100%;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 260px;
+
+  margin-top: 12px;
+
+  padding: 10px 0;
+
+  background-color: #1a4220;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+
+  z-index: 1000;
+}
+
+.menu-categorias a {
+  display: block;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 16px;
+
+  color: #e8f5e9;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  white-space: nowrap;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.menu-categorias a:hover {
+  background-color: #2e7d32;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BOTÓN INICIAR SESIÓN / USER MENU
+   ========================================================= */
+
+.header-container > app-user-menu {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+}
+
+.header-container > .btn {
+  position: absolute;
+
+  right: 0;
+  bottom: -7px;
+
+  margin: 0 !important;
+
+  padding: 0.7rem 1.3rem !important;
+
+  background-color: #2e7d32 !important;
+
+  color: #ffffff !important;
+
+  border: none !important;
+  border-radius: 5px !important;
+
+  font-size: 0.95rem !important;
+  font-weight: 600;
+
+  cursor: pointer !important;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease !important;
+}
+
+
+/* Separador entre navegación y botón */
+
+.header-container > .btn::before {
+  content: "|";
+
+  position: absolute;
+
+  left: -17px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: rgba(255, 255, 255, 0.6);
+
+  pointer-events: none;
+}
+
+
+/* Hover del botón */
+
+.header-container > .btn:hover {
+  background-color: #4caf50 !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Estado al presionar */
+
+.header-container > .btn:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   LOGO GRÁFICO RURALL
+   ========================================================= */
+
+.header-logo-app {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Imagen circular */
+
+.logo-img {
+  display: block;
+
+  width: 85px;
+  height: 85px;
+
+  object-fit: contain;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  filter:
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+
+  box-shadow:
+    0 0 10px 2px rgba(255, 255, 255, 0.6),
+    0 8px 20px rgba(0, 0, 0, 0.35);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Hover del logo */
+
+.logo-img:hover {
+  transform: scale(1.08);
+
+  filter:
+    drop-shadow(0 0 20px #4caf50)
+    drop-shadow(0 0 35px rgba(76, 175, 80, 0.6));
+
+  box-shadow:
+    0 0 12px 4px rgba(255, 255, 255, 0.8),
+    0 12px 25px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   ADAPTACIÓN DEL HEADER PARA PANTALLAS MEDIANAS
+   ========================================================= */
+
+@media (max-width: 1000px) and (min-width: 601px) {
+
+  header {
+    padding: 2.5rem 2rem 3.5rem;
+  }
+
+  .header-container {
+    min-height: auto;
+    padding-right: 110px;
+  }
+
+  .header-texto {
+    position: static;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .header-texto p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 650px;
+  }
+
+  .navegacion-header {
+    position: static;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: normal;
+    margin-top: 0.5rem;
+  }
+
+  .navegacion-header a {
+    padding: 0 12px;
+    margin-bottom: 8px;
+  }
+
+  .header-container > .btn,
+  .header-container > app-user-menu {
+    position: static;
+    margin-top: 0.5rem !important;
+  }
+
+  .header-container > .btn::before {
+    display: none;
+  }
+
+  .header-logo-app {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .logo-img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+
+/* =========================================================
+   ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  header {
+    padding: 2.5rem 1.5rem 3rem;
+  }
+
+  .header-container {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .header-texto {
+    position: static;
+
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 2.3rem;
+  }
+
+  .header-texto p {
+    font-size: 0.95rem;
+  }
+
+  .navegacion-header {
+    position: static;
+
+    margin-top: 1.5rem;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    white-space: normal;
+  }
+
+  .navegacion-header a {
+    padding: 0 10px;
+    margin-bottom: 8px;
+  }
+
+  .header-container > .btn,
+  .header-container > app-user-menu {
+    position: static;
+
+    margin-top: 0.8rem !important;
+  }
+
+  .header-container > .btn::before {
+    display: none;
+  }
+
+  .header-logo-app {
+    position: static;
+
+    margin-top: 1.5rem;
+  }
+
+  .logo-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+
+/* =========================================================
+   ANIMACIONES SUTILES DEL HEADER
+   ========================================================= */
+
+header {
+  animation: headerEntrada 0.8s ease-out both;
+}
+
+.header-texto {
+  animation: textoEntrada 0.8s ease-out 0.15s both;
+}
+
+.navegacion-header {
+  animation: navegacionEntrada 0.8s ease-out 0.3s both;
+}
+
+.header-container > .btn,
+.header-container > app-user-menu {
+  animation: botonEntrada 0.8s ease-out 0.4s both;
+}
+
+.header-logo-app {
+  animation: logoEntrada 0.9s ease-out 0.2s both;
+}
+
+
+/* =========================================================
+   HOVER SUAVE DE LA NAVEGACIÓN
+   ========================================================= */
+
+.navegacion-header a:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HOVER DEL LOGO
+   ========================================================= */
+
+.logo-img:hover {
+  transform: scale(1.08);
+}
+
+
+/* =========================================================
+   RESPETO POR REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  header,
+  .header-texto,
+  .navegacion-header,
+  .header-container > .btn,
+  .header-container > app-user-menu,
+  .header-logo-app {
+    animation: none;
+  }
+
+  .logo,
+  .navegacion-header a,
+  .header-container > .btn,
+  .header-container > app-user-menu,
+  .logo-img {
+    transition: none;
+  }
+}

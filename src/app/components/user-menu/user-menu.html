@@ -1,0 +1,51 @@
+<div class="user-menu" #menuRef>
+
+  <button
+    type="button"
+    class="user-menu-trigger"
+    (click)="alternarMenu()"
+    [attr.aria-expanded]="menuAbierto">
+
+    <span class="user-menu-avatar">{{ iniciales }}</span>
+    <span class="user-menu-flecha">▾</span>
+
+  </button>
+
+  @if (menuAbierto) {
+
+    <div class="user-menu-dropdown">
+
+      <div class="user-menu-header">
+        <p class="user-menu-nombre">{{ authService.sesion()?.nombreCompleto }}</p>
+        <p class="user-menu-email">{{ authService.sesion()?.email }}</p>
+      </div>
+
+      <div class="user-menu-items">
+
+        <a routerLink="/perfil" (click)="cerrarMenu()" class="user-menu-item">
+          <span class="user-menu-icono">👤</span>
+          <span>Mi perfil</span>
+        </a>
+
+        <a routerLink="/panel" (click)="cerrarMenu()" class="user-menu-item">
+          <span class="user-menu-icono">📋</span>
+          <span>Mi panel</span>
+        </a>
+
+      </div>
+
+      <div class="user-menu-separador"></div>
+
+      <button
+        type="button"
+        (click)="cerrarSesion()"
+        class="user-menu-item user-menu-item-cerrar">
+        <span class="user-menu-icono">🚪</span>
+        <span>Cerrar sesión</span>
+      </button>
+
+    </div>
+
+  }
+
+</div>

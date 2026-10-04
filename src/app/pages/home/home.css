@@ -1,0 +1,15 @@
+/* =========================================================
+   FONDO CONTINUO HERO + CARRUSEL RURALL
+   ========================================================= */
+
+.rurall-fondo-continuo {
+  background: linear-gradient(
+    110deg,
+    #dcefe0 0%,
+    #c5dfc9 28%,
+    #b8c9a9 45%,
+    #9f9a72 55%,
+    #6f8f62 72%,
+    #3f7048 100%
+  );
+}

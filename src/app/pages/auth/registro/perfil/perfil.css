@@ -1,0 +1,72 @@
+@import '../_shared.css';
+
+/* ==============================
+   ESPECÍFICO DEL PASO 2
+   ============================== */
+
+.opciones-rol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.opcion-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  width: 100%;
+  padding: 22px 20px;
+
+  border: 1px solid #d4ddd7;
+  border-radius: 12px;
+  background: #ffffff;
+
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.opcion-card:hover {
+  border-color: #285943;
+  box-shadow: 0 6px 20px rgba(40, 89, 67, 0.12);
+  transform: translateY(-2px);
+}
+
+.opcion-emoji {
+  flex-shrink: 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.opcion-texto {
+  flex: 1;
+}
+
+.opcion-texto h3 {
+  margin-bottom: 6px;
+  color: #285943;
+  font-size: 1.1rem;
+}
+
+.opcion-texto p {
+  color: #5f6f65;
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.opcion-flecha {
+  color: #285943;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.opcion-card:hover .opcion-flecha {
+  transform: translateX(4px);
+}

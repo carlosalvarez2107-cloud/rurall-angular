@@ -1,0 +1,36 @@
+@import '../_shared.css';
+
+/* ==============================
+   PÁGINA DE CONFIRMACIÓN
+   ============================== */
+
+.confirmacion-contenido {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.confirmacion-emoji {
+  margin-bottom: 20px;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.confirmacion-contenido h2 {
+  margin-bottom: 16px;
+  color: #285943;
+  font-size: 2rem;
+}
+
+.confirmacion-mensaje {
+  margin-bottom: 32px;
+  color: #5f6f65;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Botón como enlace (necesita display: block para width 100%) */
+.btn-primario {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}

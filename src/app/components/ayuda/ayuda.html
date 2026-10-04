@@ -1,0 +1,66 @@
+<div class="chat-flotante-container">
+
+  <!-- Ventana de soporte -->
+  <div
+    class="chat-window"
+    [class.chat-abierto]="chatAbierto"
+  >
+
+    <!-- Encabezado -->
+    <div class="chat-header">
+
+      <h3>🌱 Soporte RURALL</h3>
+
+      <button
+        type="button"
+        class="btn-cerrar-chat"
+        (click)="cerrarChat()"
+        aria-label="Cerrar soporte"
+      >
+        &times;
+      </button>
+
+    </div>
+
+    <!-- Cuerpo -->
+    <div class="chat-body">
+
+      <p class="mensaje-bot">
+        ¡Hola! 👤 Bienvenido al soporte técnico de RURALL
+      </p>
+
+    </div>
+
+    <!-- Pie -->
+    <div class="chat-footer">
+
+      <input
+        type="text"
+        placeholder="Escribe tu mensaje aquí..."
+        disabled
+      >
+
+      <button
+        type="button"
+        class="btn-enviar-chat"
+        disabled
+      >
+        ➡️
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- Botón Ayuda -->
+  <button
+    type="button"
+    id="btn-ayuda-rurall"
+    class="btn-ayuda-compacto"
+    (click)="mostrarChat()"
+  >
+    Ayuda
+  </button>
+
+</div>
+

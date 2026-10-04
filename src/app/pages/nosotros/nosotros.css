@@ -1,0 +1,428 @@
+/* ==============================
+   HERO
+   ============================== */
+
+.nosotros-hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: 80px; /* alto del navbar */
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  background: url('/nosotros.jpg') left center/cover no-repeat;
+}
+
+.nosotros-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 89, 67, 0.55);
+}
+
+.nosotros-hero-contenido {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  max-width: 750px;
+}
+
+.nosotros-hero-contenido h1 {
+  margin-bottom: 18px;
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.nosotros-hero-contenido p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #f0f4f1;
+}
+
+/* ==============================
+   CONTENEDOR GENERAL
+   ============================== */
+
+   .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 600px) {
+  .nosotros-hero {
+    min-height: calc(100vh - 70px);
+  }
+
+  .nosotros-hero-contenido h1 {
+    font-size: 2.2rem;
+  }
+
+  .nosotros-hero-contenido p {
+    font-size: 1rem;
+  }
+}
+
+/* ==============================
+   MISIÓN Y VISIÓN
+   ============================== */
+
+.nosotros-mision-vision {
+  padding: 80px 0;
+  background: #f7f9f7;
+}
+
+.mision-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.mision-vision-card {
+  padding: 35px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.mision-vision-card h2 {
+  margin-bottom: 16px;
+  color: #285943;
+  font-size: 1.6rem;
+}
+
+.mision-vision-card p {
+  color: #5f6f65;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .mision-vision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================
+   HISTORIA
+   ============================== */
+
+.nosotros-historia {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.historia-bloque {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.historia-texto h2 {
+  margin-bottom: 24px;
+  color: #285943;
+  font-size: 2rem;
+}
+
+.historia-texto p {
+  margin-bottom: 18px;
+  color: #5f6f65;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.historia-texto p:last-child {
+  margin-bottom: 0;
+}
+
+.historia-imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .historia-bloque {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* ==============================
+   VALORES
+   ============================== */
+
+.nosotros-valores {
+  padding: 80px 0;
+  background: #f7f9f7;
+}
+
+.valores-encabezado {
+  max-width: 650px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.valores-encabezado h2 {
+  margin-bottom: 14px;
+  color: #285943;
+  font-size: 2rem;
+}
+
+.valores-encabezado p {
+  color: #5f6f65;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.valor-card {
+  padding: 32px 26px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.valor-icono {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.valor-card h3 {
+  margin-bottom: 12px;
+  color: #285943;
+  font-size: 1.15rem;
+}
+
+.valor-card p {
+  color: #66736b;
+  line-height: 1.6;
+  font-size: 0.97rem;
+}
+
+/* ==============================
+   EQUIPO
+   ============================== */
+
+.nosotros-equipo {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.equipo-encabezado {
+  max-width: 650px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.equipo-encabezado h2 {
+  margin-bottom: 14px;
+  color: #285943;
+  font-size: 2rem;
+}
+
+.equipo-encabezado p {
+  color: #5f6f65;
+  font-size: 1.05rem;
+}
+
+.equipo-card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  background: #f7f9f7;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.equipo-foto {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #285943;
+}
+
+.equipo-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.equipo-card h3 {
+  margin-bottom: 6px;
+  color: #285943;
+  font-size: 1.35rem;
+}
+
+.equipo-rol {
+  margin-bottom: 18px;
+  color: #285943;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.equipo-bio {
+  color: #5f6f65;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+/* ==============================
+   TECNOLOGÍAS
+   ============================== */
+
+.nosotros-tecnologias {
+  padding: 80px 0;
+  background: #f7f9f7;
+}
+
+.tecnologias-encabezado {
+  max-width: 650px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.tecnologias-encabezado h2 {
+  margin-bottom: 14px;
+  color: #285943;
+  font-size: 2rem;
+}
+
+.tecnologias-encabezado p {
+  color: #5f6f65;
+  font-size: 1.05rem;
+}
+
+.tecnologias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.tecnologia-card {
+  padding: 30px 22px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tecnologia-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tecnologia-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+
+  border-radius: 12px;
+  background: #285943;
+  color: #ffffff;
+
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+}
+
+.tecnologia-card h3 {
+  margin-bottom: 10px;
+  color: #285943;
+  font-size: 1.1rem;
+}
+
+.tecnologia-card p {
+  color: #66736b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ==============================
+   CTA FINAL
+   ============================== */
+
+.nosotros-cta {
+  padding: 90px 0;
+  background: #f7f9f7;
+}
+
+.cta-contenido {
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-contenido h2 {
+  margin-bottom: 16px;
+  color: #285943;
+  font-size: 2.2rem;
+}
+
+.cta-contenido p {
+  margin-bottom: 32px;
+  color: #5f6f65;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.95rem 2.2rem;
+
+  background-color: #285943;
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+
+  text-decoration: none;
+  text-align: center;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #1f4735;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(40, 89, 67, 0.25);
+}

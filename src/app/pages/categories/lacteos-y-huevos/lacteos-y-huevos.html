@@ -1,0 +1,53 @@
+<main class="lacteos-y-huevos-page">
+
+  <section class="lacteos-y-huevos-header">
+
+    <div class="lacteos-y-huevos-header-contenido">
+
+      <h1>Lácteos y Huevos</h1>
+
+      <p>
+        "Sabor fresco, esfuerzo diario y nutrición pura: la vida que fluye desde nuestras fincas hasta tu mesa."
+      </p>
+
+      <p>Oferta de productores y fincas disponibles:</p>
+
+    </div>
+
+    <div class="lacteos-y-huevos-header-imagen">
+      <img
+        src="/lacteos_y_huevos.jpg"
+        alt="Lácteos y huevos colombianos"
+      >
+    </div>
+
+  </section>
+
+  <section class="oferta-fincas">
+
+    @for (finca of fincas; track finca.nombre) {
+      <article class="tarjeta-finca">
+
+        <img
+          [src]="finca.imagen"
+          [alt]="'Imagen de ' + finca.nombre"
+        >
+
+        <div class="informacion-finca">
+          <h2>{{ finca.nombre }}</h2>
+
+          <p>
+            <strong>Ubicación:</strong>
+            {{ finca.ubicacion }}
+          </p>
+
+          <p>
+            <strong>Puntuación:</strong>
+            ⭐ {{ finca.puntuacion }}
+          </p>
+        </div>
+
+      </article>
+    }
+
+  </section>

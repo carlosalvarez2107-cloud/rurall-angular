@@ -1,0 +1,97 @@
+<!-- Encabezado / Navegación -->
+<header>
+    <div class="header-container">
+
+        <div class="header-texto">
+
+            <div class="logo">RURALL</div>
+
+            <p>Tecnología móvil para el soporte y trazabilidad de la producción rural.</p>
+
+        </div>
+
+        <nav class="navegacion-header">
+            <a routerLink="/">Inicio</a>
+
+<div class="categoria-navegacion"#categoriaNavegacion>
+
+    <a (click)="alternarCategorias()">Categorías</a>
+
+    @if (categoriasAbiertas) {
+        <div class="menu-categorias">
+            <a
+            [routerLink]="['/categories/verduras-y-hortalizas']"
+            (click)="categoriasAbiertas = false">
+                Verduras y hortalizas
+            </a>
+
+            <a
+            [routerLink]="['/categories/frutas']"
+            (click)="categoriasAbiertas = false">
+            Frutas
+            </a>
+            
+            <a [routerLink]="['/categories/tuberculos']" 
+            (click)="categoriasAbiertas = false">
+                Tubérculos, raíces y plátanos
+            </a>
+            
+            <a [routerLink]="['/categories/granos']" 
+            (click)="categoriasAbiertas = false">
+                Granos, cereales y leguminosas
+            </a>
+
+            <a [routerLink]="['/categories/cafe']" 
+            (click)="categoriasAbiertas = false">
+                Café, cacao y cultivos de transformación
+            </a>
+            
+            <a [routerLink]="['/categories/medicinales']" 
+            (click)="categoriasAbiertas = false">
+                Aromáticas, medicinales y condimentos
+            </a>
+            
+            <a [routerLink]="['/categories/carnes']"
+            (click)="categoriasAbiertas = false">
+                Carnes
+            </a>
+
+            <a [routerLink]="['/categories/pescados-y-productos-de-pesca']"
+            (click)="categoriasAbiertas = false">
+                Pescados y productos de pesca
+            </a>
+            
+            <a [routerLink]="['/categories/lacteos-y-huevos']" 
+            (click)="categoriasAbiertas = false">
+                Lácteos y huevos
+            </a>
+
+        </div>
+    }
+
+</div>
+
+            <a routerLink="/productos">Productos</a>
+
+            <a routerLink="/trazabilidad">Trazabilidad</a>
+
+            <a routerLink="/nosotros">Nosotros</a>
+            
+        </nav>
+
+        @if (authService.sesion()) {
+  <app-user-menu />
+} @else {
+  <a class="btn" routerLink="/auth/login">Iniciar Sesión</a>
+}
+
+        <div class="header-logo-app">
+            <img
+                src="/logoRURRAL.png"
+                alt="Logo de RURALL"
+                class="logo-img">
+        </div>
+
+    </div>
+</header>
+

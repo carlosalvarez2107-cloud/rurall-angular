@@ -1,0 +1,178 @@
+/* =========================================
+   RURALL - PÁGINA LEGAL
+   Estilos base
+   ========================================= */
+
+.legal-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 45px;
+    box-sizing: border-box;
+
+    background-color: #f8f9f7;
+    color: #26352d;
+
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SECCIONES
+   ========================================= */
+
+.legal-seccion {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================
+   TÍTULO DE LA SECCIÓN
+   ========================================= */
+
+.legal-seccion > h1 {
+    margin: 0 0 45px;
+
+    text-align: center;
+
+    font-size: 2.2rem;
+    line-height: 1.2;
+
+    color: #1f3a2d;
+}
+
+
+/* =========================================
+   ARTÍCULOS
+   ========================================= */
+
+.legal-articulo {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #d9dfdb;
+}
+
+.legal-articulo:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+
+/* =========================================
+   TÍTULOS DE LOS ARTÍCULOS
+   ========================================= */
+
+.legal-articulo h2 {
+    margin: 0 0 18px;
+
+    font-size: 1.35rem;
+    line-height: 1.35;
+
+    color: #28543d;
+}
+
+
+/* =========================================
+   PÁRRAFOS
+   ========================================= */
+
+.legal-articulo p {
+    margin: 0 0 16px;
+
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.legal-articulo p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   LISTAS
+   ========================================= */
+
+.legal-articulo ul,
+.legal-articulo ol {
+    margin: 0 0 18px;
+    padding-left: 25px;
+}
+
+.legal-articulo li {
+    margin-bottom: 8px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .legal-page {
+        max-width: 100%;
+        padding: 45px 25px;
+    }
+
+    .legal-seccion > h1 {
+        margin-bottom: 35px;
+        font-size: 1.9rem;
+    }
+
+    .legal-articulo {
+        margin-bottom: 32px;
+        padding-bottom: 25px;
+    }
+
+    .legal-articulo h2 {
+        font-size: 1.2rem;
+    }
+
+    .legal-articulo p {
+        font-size: 0.98rem;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .legal-page {
+        padding: 35px 18px;
+    }
+
+    .legal-seccion > h1 {
+        margin-bottom: 30px;
+        font-size: 1.6rem;
+    }
+
+    .legal-articulo {
+        margin-bottom: 28px;
+        padding-bottom: 22px;
+    }
+
+    .legal-articulo h2 {
+        font-size: 1.1rem;
+    }
+
+    .legal-articulo p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .legal-articulo ul,
+    .legal-articulo ol {
+        padding-left: 20px;
+    }
+}

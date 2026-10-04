@@ -1,0 +1,210 @@
+/* =========================================================
+   PÁGINA CATEGORÍA FRUTAS
+   ========================================================= */
+.medicinales {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef6ed 0%,
+      #f7f8f2 50%,
+      #e8efe5 100%
+    );
+}
+
+/* =========================================================
+   ENCABEZADO DE LA CATEGORÍA
+   ========================================================= */
+.medicinales-header {
+  position: relative;
+
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  padding: 4rem 5rem;
+
+background: linear-gradient(
+  120deg,
+  #dcefd5 0%,
+  #c8e6c0 45%,
+  #b7d9ae 100%
+);
+}
+
+/* =========================================================
+   CONTENIDO DEL ENCABEZADO
+   ========================================================= */
+.medicinales-header-contenido {
+  position: relative;
+
+  z-index: 2;
+
+  width: 45%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.medicinales-header-contenido h1 {
+  margin: 0 0 1.5rem;
+
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+.medicinales-header-contenido p {
+  margin: 0 0 1.2rem;
+
+  max-width: 520px;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   IMAGEN DEL ENCABEZADO
+   ========================================================= */
+.medicinales-header-imagen {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 68%;
+  height: 100%;
+
+  z-index: 1;
+}
+
+.medicinales-header-imagen img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   DESVANECIDO DE LA IMAGEN
+   ========================================================= */
+.medicinales-header-imagen::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+background: linear-gradient(
+  to right,
+  #c8e6c0 0%,
+  rgba(200, 230, 192, 0.85) 20%,
+  rgba(200, 230, 192, 0.25) 50%,
+  transparent 75%
+);
+}
+
+/* =========================================================
+   SEPARACIÓN ENTRE ENCABEZADO Y OFERTA
+   ========================================================= */
+.oferta-fincas {
+  position: relative;
+
+  z-index: 3;
+
+  padding: 4rem 5rem;
+}
+/* =========================================================
+   OFERTA DE FINCAS
+   ========================================================= */
+
+.oferta-fincas {
+  position: relative;
+
+  z-index: 3;
+
+  padding: 4rem 5rem;
+
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+
+  gap: 2rem;
+}
+
+
+/* =========================================================
+   TARJETA DE FINCA
+   ========================================================= */
+
+.tarjeta-finca {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  cursor: pointer;
+}
+
+
+.tarjeta-finca:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   IMAGEN DE LA FINCA
+   ========================================================= */
+
+.tarjeta-finca img {
+  display: block;
+
+  width: 100%;
+
+  height: 200px;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE LA FINCA
+   ========================================================= */
+
+.informacion-finca {
+  padding: 1.5rem;
+}
+
+
+.informacion-finca h2 {
+  margin: 0 0 1rem;
+
+  font-size: 1.4rem;
+}
+
+
+.informacion-finca p {
+  margin: 0.6rem 0;
+
+  line-height: 1.5;
+}

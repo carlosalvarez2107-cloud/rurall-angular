@@ -1,0 +1,28 @@
+@import '../_shared.css';
+
+/* ==============================
+   ESPECÍFICO DEL PASO PLACEHOLDER
+   ============================== */
+
+.mensaje-proximamente {
+  padding: 40px 20px;
+  border: 1px dashed #d4ddd7;
+  border-radius: 12px;
+  text-align: center;
+  background: #f7f9f7;
+}
+
+.mensaje-proximamente .emoji {
+  margin-bottom: 12px;
+  font-size: 2.5rem;
+}
+
+.mensaje-proximamente p {
+  color: #5f6f65;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.mensaje-proximamente strong {
+  color: #285943;
+}

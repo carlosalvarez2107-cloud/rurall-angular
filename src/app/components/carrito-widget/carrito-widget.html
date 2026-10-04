@@ -1,0 +1,79 @@
+@if (carritoService.totalUnidades() > 0) {
+
+  <div class="carrito-widget" #widgetRef>
+
+    <!-- Preview panel -->
+    @if (panelAbierto) {
+
+      <div class="carrito-panel">
+
+        <header class="carrito-panel-header">
+          <h3>Tu carrito ({{ carritoService.totalUnidades() }})</h3>
+        </header>
+
+        <ul class="carrito-panel-items">
+
+          @for (item of itemsPreview(); track item.producto.id) {
+
+            <li class="carrito-panel-item">
+
+              <div class="carrito-panel-item-info">
+                <span class="carrito-panel-item-nombre">
+                  {{ item.producto.nombre }}
+                </span>
+                <span class="carrito-panel-item-cantidad">
+                  {{ item.cantidad }} ×
+                  {{ item.producto.precio | currency:'COP':'symbol-narrow':'1.0-0' }}
+                </span>
+              </div>
+
+              <span class="carrito-panel-item-subtotal">
+                {{ item.subtotal | currency:'COP':'symbol-narrow':'1.0-0' }}
+              </span>
+
+            </li>
+
+          }
+
+        </ul>
+
+        @if (itemsRestantes() > 0) {
+          <p class="carrito-panel-mas">
+            y {{ itemsRestantes() }}
+            {{ itemsRestantes() === 1 ? 'producto más' : 'productos más' }}…
+          </p>
+        }
+
+        <div class="carrito-panel-subtotal">
+          <span>Subtotal</span>
+          <strong>
+            {{ carritoService.subtotal() | currency:'COP':'symbol-narrow':'1.0-0' }}
+          </strong>
+        </div>
+
+        <a
+          routerLink="/carrito"
+          class="carrito-panel-btn"
+          (click)="panelAbierto = false">
+          Ver carrito →
+        </a>
+
+      </div>
+
+    }
+
+    <!-- Botón flotante -->
+    <button
+      type="button"
+      class="carrito-fab"
+      (click)="alternarPanel()"
+      [attr.aria-label]="'Carrito con ' + carritoService.totalUnidades() + ' productos'">
+
+      🛒
+      <span class="carrito-fab-badge">{{ carritoService.totalUnidades() }}</span>
+
+    </button>
+
+  </div>
+
+}

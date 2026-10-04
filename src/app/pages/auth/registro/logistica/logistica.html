@@ -1,0 +1,105 @@
+<header class="auth-encabezado">
+  <h2>Cuéntanos sobre tu operación</h2>
+  <p>Información básica de tu actividad logística.</p>
+</header>
+
+<form [formGroup]="formularioLogistica" (ngSubmit)="finalizar()">
+
+  <div class="campo">
+    <label for="tipoOperacion">Tipo de operación</label>
+    <input
+      type="text"
+      id="tipoOperacion"
+      formControlName="tipoOperacion"
+      placeholder="Ej: Transporte de carga, última milla...">
+
+    @if (
+      formularioLogistica.get('tipoOperacion')?.invalid &&
+      formularioLogistica.get('tipoOperacion')?.touched
+    ) {
+      <small class="mensaje-error">Describe tu tipo de operación.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="identificacion">NIT / Cédula</label>
+    <input
+      type="text"
+      id="identificacion"
+      formControlName="identificacion"
+      placeholder="Ej: 900123456"
+      inputmode="numeric">
+
+    @if (
+      formularioLogistica.get('identificacion')?.invalid &&
+      formularioLogistica.get('identificacion')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa un NIT o cédula válido (solo números).</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="departamento">Departamento</label>
+    <select id="departamento" formControlName="departamento">
+      <option value="">Selecciona un departamento</option>
+
+      @for (depto of departamentos; track depto.codigo) {
+        <option [value]="depto.nombre">{{ depto.nombre }}</option>
+      }
+
+    </select>
+
+    @if (
+      formularioLogistica.get('departamento')?.invalid &&
+      formularioLogistica.get('departamento')?.touched
+    ) {
+      <small class="mensaje-error">Selecciona tu departamento.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="municipio">Municipio</label>
+    <input
+      type="text"
+      id="municipio"
+      formControlName="municipio"
+      placeholder="Ej: Medellín">
+
+    @if (
+      formularioLogistica.get('municipio')?.invalid &&
+      formularioLogistica.get('municipio')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa tu municipio.</small>
+    }
+  </div>
+
+  <div class="campo">
+    <label for="direccionOperacion">Dirección de la operación</label>
+    <input
+      type="text"
+      id="direccionOperacion"
+      formControlName="direccionOperacion"
+      placeholder="Ej: Cra 50 #30-15, Bodega 4">
+
+    @if (
+      formularioLogistica.get('direccionOperacion')?.invalid &&
+      formularioLogistica.get('direccionOperacion')?.touched
+    ) {
+      <small class="mensaje-error">Ingresa una dirección válida.</small>
+    }
+  </div>
+
+  <button
+    type="submit"
+    class="btn-primario"
+    [disabled]="formularioLogistica.invalid">
+    Finalizar registro
+  </button>
+
+</form>
+
+<footer class="auth-links">
+  <p>
+    <a routerLink="/auth/registro/perfil">← Volver</a>
+  </p>
+</footer>

@@ -1,0 +1,113 @@
+<main class="productos-page">
+
+  <section class="productos">
+    <div class="container">
+      <div class="productos-contenido">
+
+        <h1>Productos</h1>
+
+        <p>
+          Descubre productos provenientes de productores y fincas rurales vinculados a RURALL.
+          Conoce su origen y encuentra nuevas oportunidades de conexión con el campo colombiano.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="productos-lista">
+    <div class="container">
+
+      <div class="productos-lista-contenido">
+
+        <div class="productos-buscador">
+
+          <input
+            type="text"
+            placeholder="Buscar por nombre, ubicación o finca..."
+            [value]="terminoBusqueda()"
+            (input)="actualizarTermino($event)">
+
+          @if (terminoBusqueda()) {
+            <button
+              type="button"
+              (click)="limpiarBusqueda()">
+              Limpiar
+            </button>
+          }
+
+        </div>
+
+
+        <div class="productos-destacados">
+
+          <h2>Productos destacados</h2>
+
+          @if (productosFiltrados().length === 0) {
+
+            <p class="productos-sin-resultados">
+              No se encontraron productos para "{{ terminoBusqueda() }}".
+            </p>
+
+          } @else {
+
+            <div class="productos-grid">
+
+              @for (producto of productosFiltrados(); track producto.id) {
+
+                <article class="producto-card">
+
+                  <div
+                    class="producto-imagen"
+                    [style.background-image]="'url(' + producto.imagen + ')'">
+                  </div>
+
+                  <div class="producto-informacion">
+
+                    <h3>{{ producto.nombre }}</h3>
+
+                    <p class="producto-puntuacion">
+                      ⭐ {{ producto.puntuacion }}
+                    </p>
+
+                    <p class="producto-ubicacion">
+                      📍 {{ producto.ubicacion }}
+                    </p>
+
+                    <p class="producto-finca">
+                      🌱 {{ producto.finca }}
+                    </p>
+
+                    <p class="producto-precio">
+                      {{ producto.precio | currency:'COP':'symbol-narrow':'1.0-0' }}
+                      <span class="producto-unidad">/ {{ producto.unidad }}</span>
+                    </p>
+
+                  <button
+                    type="button"
+                    class="producto-btn-agregar"
+                    (click)="agregarAlCarrito(producto)">
+                     Agregar al carrito
+                  </button>
+
+                  </div>
+
+                </article>
+
+              }
+
+            </div>
+
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <app-carrito-widget />
+
+</main>

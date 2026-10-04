@@ -1,0 +1,427 @@
+/* =========================================================
+   MENÚ LATERAL RURALL
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   BOTÓN HAMBURGUESA
+   --------------------------------------------------------- */
+
+.btn-hamburguesa-fijo {
+    position: fixed !important;
+    top: 20px !important;
+    right: 25px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        145deg,
+        #2a6633,
+        #1a4220
+    ) !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 12px !important;
+
+    font-size: 1.5rem !important;
+    line-height: 1;
+
+    cursor: pointer !important;
+
+    z-index: 99999 !important;
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease !important;
+}
+
+.btn-hamburguesa-fijo:hover {
+    transform: translateY(-2px) scale(1.05);
+
+    background: linear-gradient(
+        145deg,
+        #357d40,
+        #1a4220
+    ) !important;
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.35),
+        0 0 12px rgba(76, 175, 80, 0.25) !important;
+}
+
+.btn-hamburguesa-fijo:active {
+    transform: scale(0.95);
+}
+
+
+/* ---------------------------------------------------------
+   PANEL LATERAL
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo {
+    position: fixed !important;
+
+    top: 0 !important;
+    right: -340px !important;
+
+    width: 320px !important;
+    max-width: 90vw;
+
+    height: 100vh !important;
+
+    box-sizing: border-box !important;
+
+    padding: 65px 20px 30px !important;
+
+    background:
+        linear-gradient(
+            160deg,
+            #1a4220 0%,
+            #16391c 55%,
+            #102d16 100%
+        ) !important;
+
+    color: #ffffff;
+
+    z-index: 99998 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-shadow:
+        -10px 0 30px rgba(0, 0, 0, 0.35),
+        inset 1px 0 0 rgba(255, 255, 255, 0.08) !important;
+
+    transition:
+        right 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Estado abierto */
+
+.menu-lateral-fijo.active {
+    right: 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   BARRA DE DESPLAZAMIENTO DEL MENÚ
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.menu-lateral-fijo::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu-lateral-fijo::-webkit-scrollbar-thumb {
+    background: rgba(226, 235, 210, 0.35);
+    border-radius: 10px;
+}
+
+.menu-lateral-fijo::-webkit-scrollbar-thumb:hover {
+    background: rgba(226, 235, 210, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULO RURALL INSTITUCIONAL
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo h2 {
+    color: #ffffff !important;
+
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+
+    text-align: center;
+
+    margin: 15px 0 20px !important;
+
+    letter-spacing: 0.5px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ---------------------------------------------------------
+   LÍNEA DIVISORIA
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo hr {
+    border: 0 !important;
+
+    height: 1px !important;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(226, 235, 210, 0.6),
+        transparent
+    ) !important;
+
+    margin: 20px 0 24px !important;
+
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   ACORDEONES
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo details.acordeon-fijo {
+    background: linear-gradient(
+        145deg,
+        #2a6633,
+        #205429
+    ) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+
+    border-radius: 10px !important;
+
+    margin-bottom: 14px !important;
+
+    padding: 13px !important;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease !important;
+}
+
+
+/* Efecto al pasar el cursor */
+
+.menu-lateral-fijo details.acordeon-fijo:hover {
+    transform: translateX(-3px);
+
+    background: linear-gradient(
+        145deg,
+        #347b3f,
+        #245f2e
+    ) !important;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.25),
+        0 0 10px rgba(76, 175, 80, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   TÍTULOS DEL ACORDEÓN
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo details.acordeon-fijo summary {
+    color: #ffffff !important;
+
+    font-size: 1.05rem !important;
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+
+    outline: none !important;
+
+    list-style: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+/* Oculta marcador nativo */
+
+.menu-lateral-fijo details.acordeon-fijo summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   INDICADOR DEL ACORDEÓN
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo details.acordeon-fijo summary::after {
+    content: "＋";
+
+    float: right;
+
+    font-size: 1rem;
+
+    opacity: 0.7;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+.menu-lateral-fijo details.acordeon-fijo[open] summary::after {
+    content: "−";
+
+    opacity: 1;
+
+    transform: rotate(180deg);
+}
+
+
+/* ---------------------------------------------------------
+   CONTENIDO INTERNO
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo .contenido-interno {
+    padding-top: 12px !important;
+
+    color: #ffffff !important;
+
+    font-size: 0.92rem !important;
+
+    line-height: 1.6 !important;
+
+    animation: aparecerContenidoMenu 0.25s ease;
+}
+
+.menu-lateral-fijo .contenido-interno p {
+    color: #e2ebd2 !important;
+
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   ANIMACIÓN DEL CONTENIDO
+   --------------------------------------------------------- */
+
+@keyframes aparecerContenidoMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   FORMULARIO DE CONTACTO DEL MENÚ
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo input,
+.menu-lateral-fijo textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #263238;
+
+    font-family: inherit;
+
+    font-size: 0.9rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.menu-lateral-fijo input:focus,
+.menu-lateral-fijo textarea:focus {
+    border-color: #81c784;
+
+    box-shadow:
+        0 0 0 2px rgba(129, 199, 132, 0.2);
+}
+
+.menu-lateral-fijo textarea {
+    resize: none;
+}
+
+
+/* ---------------------------------------------------------
+   BOTÓN ENVIAR DEL CONTACTO
+   --------------------------------------------------------- */
+
+.menu-lateral-fijo form button {
+    width: 100%;
+
+    padding: 11px;
+
+    background: #102d16;
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+.menu-lateral-fijo form button:hover {
+    background: #2a6633;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .menu-lateral-fijo {
+        width: 290px !important;
+        max-width: 88vw;
+    }
+
+    .btn-hamburguesa-fijo {
+        top: 15px !important;
+        right: 15px !important;
+
+        width: 44px !important;
+        height: 44px !important;
+
+        font-size: 1.35rem !important;
+    }
+}

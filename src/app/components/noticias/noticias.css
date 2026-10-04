@@ -1,0 +1,430 @@
+/* =========================================================
+   ACTUALIDAD DEL SECTOR RURAL - RURALL
+   ========================================================= */
+
+.noticias-rurall {
+  width: 100%;
+  padding: 5rem 6%;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   INTRODUCCIÓN
+   ========================================================= */
+
+.noticias-rurall-introduccion {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.noticias-rurall-introduccion h2 {
+  margin: 0 0 0.8rem;
+  color: #1a4220;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.noticias-rurall-introduccion p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #4b5d4d;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
+.noticias-rurall-contenido {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   NOTICIA PRINCIPAL
+   ========================================================= */
+
+.noticia-principal {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  min-height: 360px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  box-shadow:
+    0 12px 30px rgba(26, 66, 32, 0.14);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.noticia-principal:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 38px rgba(26, 66, 32, 0.2);
+}
+
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+   ========================================================= */
+
+.noticia-principal-imagen {
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.noticia-principal-imagen img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.noticia-principal:hover .noticia-principal-imagen img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.noticia-principal-contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 2.5rem;
+}
+
+
+/* =========================================================
+   CATEGORÍA
+   ========================================================= */
+
+.noticia-categoria {
+  display: inline-block;
+  width: fit-content;
+
+  margin-bottom: 0.7rem;
+  padding: 0.35rem 0.75rem;
+
+  background: #e1efdf;
+  color: #1a4220;
+
+  border-radius: 50px;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   FECHA
+   ========================================================= */
+
+.noticia-fecha {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: #7a877c;
+
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+.noticia-principal-contenido h3 {
+  margin: 0 0 1rem;
+
+  color: #1a4220;
+
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   RESUMEN PRINCIPAL
+   ========================================================= */
+
+.noticia-principal-contenido p {
+  margin: 0 0 1.5rem;
+
+  color: #4b5d4d;
+
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ENLACE DE NOTICIA
+   ========================================================= */
+
+.noticia-enlace {
+  display: inline-flex;
+  align-items: center;
+
+  width: fit-content;
+
+  color: #1a4220;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.noticia-enlace::after {
+  content: " →";
+
+  transition: transform 0.25s ease;
+}
+
+.noticia-enlace:hover {
+  color: #2a6633;
+}
+
+.noticia-enlace:hover::after {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   NOTICIAS SECUNDARIAS
+   ========================================================= */
+
+.noticias-secundarias {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1.5rem;
+}
+
+
+/* =========================================================
+   TARJETAS SECUNDARIAS
+   ========================================================= */
+
+.noticia-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 22px rgba(26, 66, 32, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.noticia-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 14px 30px rgba(26, 66, 32, 0.2);
+}
+
+
+/* =========================================================
+   IMÁGENES SECUNDARIAS
+   ========================================================= */
+
+.noticia-card > img {
+  width: 100%;
+  height: 190px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.noticia-card:hover > img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CONTENIDO DE TARJETAS
+   ========================================================= */
+
+.noticia-card-contenido {
+  padding: 1.3rem;
+}
+
+.noticia-card-contenido .noticia-categoria {
+  margin-bottom: 0.55rem;
+}
+
+.noticia-card-contenido .noticia-fecha {
+  margin-bottom: 0.8rem;
+}
+
+
+/* =========================================================
+   TÍTULOS SECUNDARIOS
+   ========================================================= */
+
+.noticia-card-contenido h3 {
+  margin: 0 0 0.8rem;
+
+  color: #1a4220;
+
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   RESÚMENES SECUNDARIOS
+   ========================================================= */
+
+.noticia-card-contenido p {
+  margin: 0 0 1.2rem;
+
+  color: #5b685d;
+
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .noticias-rurall {
+    padding: 4rem 5%;
+  }
+
+  .noticias-secundarias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET PEQUEÑA
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .noticia-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-principal-imagen {
+    min-height: 280px;
+  }
+
+  .noticia-principal-contenido {
+    padding: 2rem;
+  }
+
+  .noticia-principal-contenido h3 {
+    font-size: 1.7rem;
+  }
+
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .noticias-rurall {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .noticias-rurall-introduccion {
+    margin-bottom: 2rem;
+  }
+
+  .noticias-rurall-introduccion h2 {
+    font-size: 1.8rem;
+  }
+
+  .noticias-rurall-introduccion p {
+    font-size: 0.95rem;
+  }
+
+  .noticia-principal {
+    border-radius: 16px;
+  }
+
+  .noticia-principal-imagen {
+    min-height: 230px;
+  }
+
+  .noticia-principal-contenido {
+    padding: 1.5rem;
+  }
+
+  .noticia-principal-contenido h3 {
+    font-size: 1.45rem;
+  }
+
+  .noticias-secundarias {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .noticia-card > img {
+    height: 210px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .noticia-principal,
+  .noticia-card,
+  .noticia-principal-imagen img,
+  .noticia-card > img,
+  .noticia-enlace {
+    transition: none;
+  }
+
+}

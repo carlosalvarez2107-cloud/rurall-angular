@@ -1,0 +1,55 @@
+<main class="cafe-page">
+
+  <section class="cafe-header">
+
+    <div class="cafe-header-contenido">
+
+      <h1>Café, Cacao Y Cultivos De Transformación</h1>
+
+      <p>
+        "Fruto de nuestra tierra, aroma de nuestra gente, el arte colombiano de transformar la tierra en orgullo."
+      </p>
+
+      <p>Oferta de productores y fincas disponibles:</p>
+
+    </div>
+
+    <div class="cafe-header-imagen">
+      <img
+        src="/café.jpg"
+        alt="Café, Cacao Y Cultivos De Transformación"
+      >
+    </div>
+
+  </section>
+
+  <section class="oferta-fincas">
+
+    @for (finca of fincas; track finca.nombre) {
+      <article class="tarjeta-finca">
+
+        <img
+          [src]="finca.imagen"
+          [alt]="'Imagen de ' + finca.nombre"
+        >
+
+        <div class="informacion-finca">
+          <h2>{{ finca.nombre }}</h2>
+
+          <p>
+            <strong>Ubicación:</strong>
+            {{ finca.ubicacion }}
+          </p>
+
+          <p>
+            <strong>Puntuación:</strong>
+            ⭐ {{ finca.puntuacion }}
+          </p>
+        </div>
+
+      </article>
+    }
+
+  </section>
+
+</main>

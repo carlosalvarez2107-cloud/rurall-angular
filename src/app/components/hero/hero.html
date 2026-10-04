@@ -1,0 +1,39 @@
+<section class="hero">
+
+  <div class="hero-contenido">
+
+    <h1>Conectando el campo con el consumidor</h1>
+
+    <p>
+      Monitorea tu producción, gestiona tus cultivos y conoce el origen de tus
+      productos mediante tecnología de trazabilidad QR.
+    </p>
+
+    <div class="hero-botones">
+
+      <button class="btn-conoce-rurall">
+        Conoce RURALL
+      </button>
+
+      @if (authService.sesion()) {
+        <a routerLink="/panel" class="btn-conoce-rurall">
+          Ir a mi panel
+        </a>
+      } @else {
+        <a routerLink="/auth/registro" class="btn-conoce-rurall">
+          Únete a RURALL
+        </a>
+      }
+
+    </div>
+
+  </div>
+
+  <div class="hero-imagen">
+    <img
+      src="/hero-rurall.jpg"
+      alt="Tecnología aplicada a la producción rural"
+    />
+  </div>
+
+</section>

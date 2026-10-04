@@ -1,0 +1,472 @@
+/* =========================================================
+   AYUDA / SOPORTE RURALL
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTENEDOR FLOTANTE
+   --------------------------------------------------------- */
+
+.chat-flotante-container {
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  z-index: 99997;
+}
+
+
+/* =========================================================
+   BOTÓN DE AYUDA - RURALL
+   ========================================================= */
+.btn-ayuda-compacto {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  width: 105px;
+  height: 40px;
+
+  padding: 0 12px;
+
+  background-color: #0f4d1d;
+  color: #ffffff;
+
+  border: 2px solid #2e7d32;
+  border-radius: 20px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 9px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  transition:
+    background-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Icono de chat */
+
+.btn-ayuda-compacto::before {
+  content: "💬";
+
+  display: inline-block;
+
+  font-size: 13px;
+  line-height: 1;
+
+  transform: translateY(1px);
+}
+
+
+/* Hover */
+
+.btn-ayuda-compacto:hover {
+  background-color: #176b27;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 13px rgba(0, 0, 0, 0.28),
+    0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+
+/* Al presionar */
+
+.btn-ayuda-compacto:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 7px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Accesibilidad */
+
+.btn-ayuda-compacto:focus-visible {
+  outline: 3px solid rgba(165, 214, 167, 0.8);
+  outline-offset: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   ICONO DE CHAT
+   --------------------------------------------------------- */
+
+.btn-ayuda-compacto::before {
+  content: "💬";
+
+  display: inline-block;
+
+  font-size: 16px;
+  line-height: 1;
+
+  transform: translateY(1px);
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.btn-ayuda-compacto:hover {
+  background-color: #176b27;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 16px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(76, 175, 80, 0.2);
+}
+
+
+/* ---------------------------------------------------------
+   AL PRESIONAR
+   --------------------------------------------------------- */
+
+.btn-ayuda-compacto:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ---------------------------------------------------------
+   ACCESIBILIDAD
+   --------------------------------------------------------- */
+
+.btn-ayuda-compacto:focus-visible {
+  outline: 3px solid rgba(165, 214, 167, 0.8);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.btn-ayuda-compacto:hover {
+  background-color: #176b27;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.30),
+    0 0 12px rgba(76, 175, 80, 0.25);
+}
+
+
+/* =========================================================
+   ESTADO AL PRESIONAR
+   ========================================================= */
+
+.btn-ayuda-compacto:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+.btn-ayuda-compacto:focus-visible {
+  outline: 3px solid rgba(165, 214, 167, 0.8);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   VENTANA DEL CHAT
+   ========================================================= */
+
+.chat-window {
+  position: absolute;
+
+  left: 0;
+  bottom: 65px;
+
+  width: 320px;
+  max-width: calc(100vw - 50px);
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.30);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(15px)
+    scale(0.96);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+/* =========================================================
+   CHAT ABIERTO
+   ========================================================= */
+
+.chat-window.chat-abierto {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   ENCABEZADO DEL CHAT
+   ========================================================= */
+
+.chat-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2a6633,
+      #1a4220
+    );
+
+  color: #ffffff;
+}
+
+
+/* Título */
+
+.chat-header h3 {
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   BOTÓN CERRAR CHAT
+   ========================================================= */
+
+.btn-cerrar-chat {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  color: #ffffff;
+
+  font-size: 25px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  border-radius: 6px;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.btn-cerrar-chat:hover {
+  background: rgba(255, 255, 255, 0.12);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   CUERPO DEL CHAT
+   ========================================================= */
+
+.chat-body {
+  min-height: 120px;
+
+  padding: 16px;
+
+  background: #f5f7f4;
+}
+
+
+/* =========================================================
+   MENSAJE DEL BOT
+   ========================================================= */
+
+.mensaje-bot {
+  margin: 0;
+
+  padding: 10px 12px;
+
+  background: #e2ebd2;
+
+  color: #263238;
+
+  border-radius: 8px;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PIE DEL CHAT
+   ========================================================= */
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px;
+
+  background: #ffffff;
+
+  border-top: 1px solid #e0e0e0;
+}
+
+
+/* =========================================================
+   CAMPO DE TEXTO
+   ========================================================= */
+
+.chat-footer input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 9px 10px;
+
+  border: 1px solid #cccccc;
+
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 0.85rem;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BOTÓN ENVIAR
+   ========================================================= */
+
+.btn-enviar-chat {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #1a4220;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.btn-enviar-chat:hover:not(:disabled) {
+  background: #2a6633;
+
+  transform: translateY(-1px);
+}
+
+
+.btn-enviar-chat:disabled {
+  opacity: 0.55;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .chat-flotante-container {
+    left: 15px;
+    bottom: 15px;
+  }
+
+
+  .chat-window {
+    width: 290px;
+
+    max-width:
+      calc(100vw - 30px);
+
+    bottom: 58px;
+  }
+
+
+  .btn-ayuda-compacto {
+    width: 120px;
+    height: 46px;
+
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================================
+   RESPETO POR REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .btn-ayuda-compacto,
+  .chat-window,
+  .btn-cerrar-chat,
+  .btn-enviar-chat {
+    transition: none;
+  }
+}

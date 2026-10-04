@@ -1,0 +1,53 @@
+<main class="verduras-y-hortalizas-page">
+
+  <section class="verduras-y-hortalizas-header">
+
+    <div class="verduras-y-hortalizas-header-contenido">
+
+      <h1>Verduras y Hortalizas</h1>
+
+      <p>
+        "En cada verdura de nuestra tierra se guarda el sudor del campesino, el abrazo de las montañas y el sabor vivo de un país que florece desde sus raíces"
+      </p>
+
+      <p>Oferta de productores y fincas disponibles:</p>
+
+    </div>
+
+    <div class="verduras-y-hortalizas-header-imagen">
+      <img
+        src="/verduras_y_hortalizas.jpg"
+        alt="Verduras y hortalizas colombianas"
+      >
+    </div>
+
+  </section>
+
+  <section class="oferta-fincas">
+
+    @for (finca of fincas; track finca.nombre) {
+      <article class="tarjeta-finca">
+
+        <img
+          [src]="finca.imagen"
+          [alt]="'Imagen de ' + finca.nombre"
+        >
+
+        <div class="informacion-finca">
+          <h2>{{ finca.nombre }}</h2>
+
+          <p>
+            <strong>Ubicación:</strong>
+            {{ finca.ubicacion }}
+          </p>
+
+          <p>
+            <strong>Puntuación:</strong>
+            ⭐ {{ finca.puntuacion }}
+          </p>
+        </div>
+
+      </article>
+    }
+
+  </section>

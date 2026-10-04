@@ -1,0 +1,271 @@
+/* ==============================
+   LAYOUT SPLIT
+   ============================== */
+
+.auth-page {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  min-height: 100vh;
+}
+
+/* ==============================
+   LADO IZQUIERDO: BRANDING
+   ============================== */
+
+.auth-branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px;
+
+  background: #285943;
+  color: #ffffff;
+}
+
+.auth-branding-contenido {
+  max-width: 420px;
+}
+
+.auth-branding-contenido h1 {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.auth-branding-contenido p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #d9e5dd;
+}
+
+/* ==============================
+   LADO DERECHO: FORMULARIO
+   ============================== */
+
+.auth-formulario-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 40px;
+
+  background: #ffffff;
+}
+
+.auth-formulario {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-encabezado {
+  margin-bottom: 35px;
+}
+
+.auth-encabezado h2 {
+  margin-bottom: 10px;
+  color: #285943;
+  font-size: 1.9rem;
+}
+
+.auth-encabezado p {
+  color: #5f6f65;
+  font-size: 1rem;
+}
+
+/* ==============================
+   CAMPOS
+   ============================== */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.campo label {
+  margin-bottom: 8px;
+  color: #285943;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d4ddd7;
+  border-radius: 8px;
+
+  background: #ffffff;
+  font-size: 1rem;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #285943;
+  box-shadow: 0 0 0 3px rgba(40, 89, 67, 0.12);
+}
+
+.mensaje-error {
+  margin-top: 6px;
+  color: #b42318;
+  font-size: 0.85rem;
+}
+
+/* ==============================
+   INPUT PASSWORD CON TOGGLE
+   ============================== */
+
+.input-password {
+  position: relative;
+}
+
+.input-password input {
+  padding-right: 48px;
+}
+
+.btn-toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+
+  transform: translateY(-50%);
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  background: transparent;
+
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+   RECORDARME
+   ============================== */
+
+.campo-recordarme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  color: #5f6f65;
+  font-size: 0.95rem;
+
+  cursor: pointer;
+}
+
+.campo-recordarme input {
+  width: 16px;
+  height: 16px;
+  accent-color: #285943;
+  cursor: pointer;
+}
+
+/* ==============================
+   BOTÓN
+   ============================== */
+
+.btn-login {
+  width: 100%;
+
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #285943;
+  color: #ffffff;
+
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-login:hover:not(:disabled) {
+  background: #1f4735;
+  transform: translateY(-1px);
+}
+
+.btn-login:disabled {
+  background: #a4b5ab;
+  cursor: not-allowed;
+}
+
+/* ==============================
+   LINKS
+   ============================== */
+
+.auth-links {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.auth-links p {
+  margin-bottom: 8px;
+  color: #5f6f65;
+  font-size: 0.95rem;
+}
+
+.auth-links a {
+  color: #285943;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 900px) {
+  .auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-branding {
+    display: none;
+  }
+
+  .auth-formulario-wrapper {
+    padding: 40px 20px;
+  }
+}
+
+/* ==============================
+   MENSAJE DE ERROR GENERAL
+   ============================== */
+
+.mensaje-error-login {
+  margin-bottom: 18px;
+  padding: 12px 16px;
+
+  border: 1px solid #f0b4ad;
+  border-radius: 8px;
+
+  background: #fef3f2;
+  color: #b42318;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}

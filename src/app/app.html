@@ -1,0 +1,11 @@
+@if (!esRutaAuth) {
+  <app-header />
+  <app-menu-lateral />
+  <app-ayuda />
+}
+
+<router-outlet />
+
+@if (!esRutaAuth) {
+  <app-footer />
+}

@@ -1,0 +1,172 @@
+<aside
+  id="menu-lateral"
+  class="menu-lateral-fijo"
+  [class.active]="menuAbierto"
+  aria-label="Menú institucional RURALL"
+>
+
+  <!-- Contenido principal del menú -->
+  <div class="menu-contenido">
+
+    <!-- Identidad -->
+    <div class="menu-identidad">
+
+      <h2>🌱 RURALL Institucional</h2>
+
+      <hr>
+
+    </div>
+
+
+    <!-- ¿Quiénes somos? -->
+    <details class="acordeon-fijo">
+
+      <summary>
+        🔍 ¿Quiénes somos?
+      </summary>
+
+      <div class="contenido-interno">
+
+        <p>
+          Somos una plataforma tecnológica (Agrotech)
+          desarrollada para optimizar la cadena de
+          trazabilidad agropecuaria de Colombia.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- Misión -->
+    <details class="acordeon-fijo">
+
+      <summary>
+        🎯 Misión Institucional
+      </summary>
+
+      <div class="contenido-interno">
+
+        <p>
+          Facilitar la conexión transparente entre
+          productores y consumidores, garantizando
+          el origen y la calidad de los productos a
+          través de tecnología accesible.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- Visión -->
+    <details class="acordeon-fijo">
+
+      <summary>
+        👁️ Visión Institucional
+      </summary>
+
+      <div class="contenido-interno">
+
+        <p>
+          Para el año 2030, consolidarnos como el
+          ecosistema digital líder en trazabilidad
+          agropecuaria de Colombia.
+        </p>
+
+      </div>
+
+    </details>
+
+
+    <!-- Contacto -->
+    <details class="acordeon-fijo">
+
+      <summary>
+        📬 Contáctanos
+      </summary>
+
+      <div class="contenido-interno">
+
+        <p class="contacto-descripcion">
+          Déjanos tu mensaje
+        </p>
+
+
+        <form
+          id="form-contacto-rurall"
+          (submit)="enviarContacto($event)"
+        >
+
+          <!-- Nombre -->
+          <div class="campo-contacto">
+
+            <input
+              type="text"
+              id="contacto-nombre"
+              name="nombre"
+              placeholder="Tu Nombre"
+              required
+            >
+
+          </div>
+
+
+          <!-- Correo -->
+          <div class="campo-contacto">
+
+            <input
+              type="email"
+              id="contacto-correo"
+              name="correo"
+              placeholder="Tu Correo"
+              required
+            >
+
+          </div>
+
+
+          <!-- Mensaje -->
+          <div class="campo-contacto">
+
+            <textarea
+              id="contacto-mensaje"
+              name="mensaje"
+              placeholder="¿En qué podemos ayudarte?"
+              rows="3"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <!-- Enviar -->
+          <button
+            type="submit"
+            class="btn-enviar-contacto"
+          >
+            Enviar
+          </button>
+
+        </form>
+
+      </div>
+
+    </details>
+
+  </div>
+
+</aside>
+
+
+<!-- Botón hamburguesa -->
+<button
+  id="btn-hamburguesa"
+  type="button"
+  class="btn-hamburguesa-fijo"
+  (click)="toggleMenuLateral()"
+  aria-label="Abrir menú"
+>
+  &#9776;
+</button>
+

@@ -1,0 +1,276 @@
+/* =========================================================
+   WIDGET FLOTANTE DEL CARRITO
+   ========================================================= */
+
+.carrito-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+}
+
+
+/* =========================================================
+   BOTÓN FLOTANTE (FAB)
+   ========================================================= */
+
+.carrito-fab {
+  position: relative;
+
+  width: 60px;
+  height: 60px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #285943;
+  color: #ffffff;
+
+  font-size: 1.6rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(40, 89, 67, 0.4);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carrito-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(40, 89, 67, 0.5);
+}
+
+.carrito-fab:active {
+  transform: translateY(-1px);
+}
+
+.carrito-fab-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+
+  min-width: 22px;
+  height: 22px;
+
+  padding: 0 6px;
+  box-sizing: border-box;
+
+  border-radius: 11px;
+
+  background: #d32f2f;
+  color: #ffffff;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   PANEL DE PREVIEW
+   ========================================================= */
+
+.carrito-panel {
+  position: absolute;
+
+  bottom: 78px;
+  right: 0;
+
+  width: 340px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+
+  animation: panelEntrada 0.2s ease-out;
+}
+
+@keyframes panelEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Header del panel */
+
+.carrito-panel-header {
+  padding: 14px 18px;
+  background: #f7f9f7;
+  border-bottom: 1px solid #e5ebe6;
+}
+
+.carrito-panel-header h3 {
+  margin: 0;
+  color: #285943;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+
+/* Lista de items */
+
+.carrito-panel-items {
+  max-height: 240px;
+  overflow-y: auto;
+
+  margin: 0;
+  padding: 8px 0;
+
+  list-style: none;
+}
+
+.carrito-panel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 10px 18px;
+}
+
+.carrito-panel-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.carrito-panel-item-nombre {
+  color: #1a4220;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carrito-panel-item-cantidad {
+  color: #6c7a70;
+  font-size: 0.82rem;
+}
+
+.carrito-panel-item-subtotal {
+  color: #285943;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* Texto "y X productos más" */
+
+.carrito-panel-mas {
+  margin: 0;
+  padding: 8px 18px 12px;
+
+  color: #6c7a70;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+
+/* Subtotal general */
+
+.carrito-panel-subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 12px 18px;
+
+  background: #f7f9f7;
+  border-top: 1px solid #e5ebe6;
+
+  color: #285943;
+  font-size: 0.95rem;
+}
+
+.carrito-panel-subtotal strong {
+  font-size: 1.05rem;
+}
+
+
+/* Botón "Ver carrito" */
+
+.carrito-panel-btn {
+  display: block;
+
+  padding: 12px 18px;
+
+  background: #285943;
+  color: #ffffff;
+
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: background-color 0.2s ease;
+}
+
+.carrito-panel-btn:hover {
+  background: #1f4735;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .carrito-widget {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .carrito-fab {
+    width: 54px;
+    height: 54px;
+    font-size: 1.4rem;
+  }
+
+  .carrito-panel {
+    width: calc(100vw - 40px);
+    max-width: 340px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCCIÓN DE MOVIMIENTO
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .carrito-fab {
+    transition: none;
+  }
+
+  .carrito-panel {
+    animation: none;
+  }
+
+}
